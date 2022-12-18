@@ -21,6 +21,7 @@ class ProfileTest:
         self.open_profile()
         self.do_after()
 
+    # авторизация, переход по клику на «Личный кабинет» и переход в конструктор по тапу на Конструктор
     def open_constructor_from_profile(self):
         self.prepare_driver()
         self.open_profile()
@@ -35,6 +36,7 @@ class ProfileTest:
 
         self.do_after()
 
+    # авторизация, переход по клику на «Личный кабинет» и переход в конструктор по тапу на Лого
     def open_constructor_by_logo(self):
         self.prepare_driver()
         self.open_profile()
@@ -49,6 +51,7 @@ class ProfileTest:
 
         self.do_after()
 
+    # авторизация и выход из аккаунта в личном кабинете
     def login_and_logout(self):
         self.prepare_driver()
         self.open_profile()
