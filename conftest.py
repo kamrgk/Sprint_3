@@ -1,6 +1,9 @@
 import random
 import string
 
+import pytest
+from selenium import webdriver
+
 url_host = 'https://stellarburgers.nomoreparties.site'
 url_registration_path = '/register'
 url_login_path = '/login'
@@ -12,6 +15,7 @@ response_timeout_s = 5
 test_account_name = 'Камилла'
 test_account_email = 'kamillarakhmatulina1000@yandex.ru'
 test_account_password = '123456'
+
 
 # генерирует рандомный email в формете имя_фамилия_номер когорты_любые 3 цифры@домен. Например, testtestov1999@yandex.ru
 def generate_test_email():
@@ -25,3 +29,11 @@ def generate_test_email():
 
     result = name + surname + kogorta + random_numbers + "@" + random_domen + ".ru"
     return result
+
+
+@pytest.fixture
+def driver():
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+
+    return driver
